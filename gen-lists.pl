@@ -3,7 +3,9 @@ use warnings;
 use strict;
 use autodie;
 
-my $lc = 0;
+my $start = pop @ARGV or die "Needs base (unused) number to start";
+
+my $lc = $start*100*1000;
 my $fh;
 while(my $line=<>) {
   if ($lc % (100*1000) == 0) {
